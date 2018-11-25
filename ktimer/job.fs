@@ -55,11 +55,11 @@ variable aaa
 : timer_aa ( -- )
 
   largedelay
+  largedelay
+  largedelay
+  largedelay
+  largedelay
   clearscreen
-  largedelay
-  largedelay
-  largedelay
-  largedelay
 
   aaa @ \ get variable
   ." report aaa: "
