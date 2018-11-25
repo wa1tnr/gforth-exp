@@ -1,6 +1,25 @@
 \ program
 variable aaa
 
+: escemit ( -- )
+  27 emit ;
+
+: lbrktemit ( -- )
+  [char] [ emit ;
+
+: twojayemit ( -- )
+  [char] J [char] 2 emit emit ;
+
+: Acoordemit ( -- )
+  [char] 7 emit [char] A emit ;
+
+: upemit ( -- )
+  escemit lbrktemit
+  Acoordemit ;
+
+: clearscreen ( -- )
+  escemit lbrktemit twojayemit upemit ;
+
 : somedelay ( -- )
   10000000
   1 do 1 drop loop ;
@@ -35,7 +54,12 @@ variable aaa
 
 : timer_aa ( -- )
 
-  somedelay
+  largedelay
+  clearscreen
+  largedelay
+  largedelay
+  largedelay
+  largedelay
 
   aaa @ \ get variable
   ." report aaa: "
@@ -57,7 +81,7 @@ variable aaa
 
   0 aaa ! \ reset timer
 
-  70 1 do timer_aa aaa @ . loop
+  700 1 do timer_aa aaa @ . loop
   noending
 ;
 
