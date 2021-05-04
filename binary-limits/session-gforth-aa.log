@@ -1,0 +1,1018 @@
+
+ $  > slimit.fs
+ $  date > slimit.fs
+ $  edit slimit.fs
+ $  cat slimit.fs
+
+( Mon May  3 23:13:10 GMT 2021 )
+
+: binary 2 BASE ! ;
+
+ $ gforth slimit.fs
+
+Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+0  ok
+hex  ok
+binary  ok
+1 1 + dup * dup * .s <10> 0 10000  ok
+dup * .s <10> 0 100000000  ok
+dup * .s <10> 0 10000000000000000  ok
+dup * .s <10> 0 100000000000000000000000000000000  ok
+dup * .s <10> 0 0  ok
+drop  ok
+1 dup +  ok
+.s <10> 0 10  ok
+dup * .s <10> 0 100  ok
+dup * .s <10> 0 10000  ok
+dup * .s <10> 0 100000000  ok
+dup * .s <10> 0 10000000000000000  ok
+dup * .s <10> 0 100000000000000000000000000000000  ok
+hex  ok
+.s <2> 0 100000000  ok
+dup + .s <2> 0 200000000  ok
+dup + .s <2> 0 400000000  ok
+dup + .s <2> 0 800000000  ok
+dup + .s <2> 0 1000000000  ok
+dup + .s <2> 0 2000000000  ok
+dup + .s <2> 0 4000000000  ok
+dup + .s <2> 0 8000000000  ok
+               1000000000 -  ok
+.s <2> 0 7000000000  ok
+          FFFFFFFFF  ok
++  ok
+.s <2> 0 7FFFFFFFFF  ok
+5 3 * . F  ok
+dup dup  ok
+.s <4> 0 7FFFFFFFFF 7FFFFFFFFF 7FFFFFFFFF  ok
+10 * .s <4> 0 7FFFFFFFFF 7FFFFFFFFF 7FFFFFFFFF0  ok
+swap drop  ok
+.s <3> 0 7FFFFFFFFF 7FFFFFFFFF0  ok
+swap drop  ok
+.s <2> 0 7FFFFFFFFF0  ok
+dup  ok
+10 * .s <3> 0 7FFFFFFFFF0 7FFFFFFFFF00  ok
+swap drop  ok
+.s <2> 0 7FFFFFFFFF00  ok
+dup .s <3> 0 7FFFFFFFFF00 7FFFFFFFFF00  ok
+10 * .s <3> 0 7FFFFFFFFF00 7FFFFFFFFF000  ok
+FFF +  ok
+.s <3> 0 7FFFFFFFFF00 7FFFFFFFFFFFF  ok
+swap drop  ok
+dup  ok
+.s <3> 0 7FFFFFFFFFFFF 7FFFFFFFFFFFF  ok
+10 * .s <3> 0 7FFFFFFFFFFFF 7FFFFFFFFFFFF0  ok
+F +  ok
+swap drop  ok
+dup  ok
+.s <3> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF  ok
+10 + .s <3> 0 7FFFFFFFFFFFFF 8000000000000F  ok
+drop  ok
+.s <2> 0 7FFFFFFFFFFFFF  ok
+dup  ok
+dup  ok
+.s <4> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF  ok
+1 +  ok
+.s <4> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF 80000000000000  ok
+dup U. 80000000000000  ok
+dup  . 80000000000000  ok
+1 +  ok
+dup  . 80000000000001  ok
+dup U. 80000000000001  ok
+.s <4> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF 80000000000001  ok
+drop  ok
+.s <3> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF  ok
+drop  ok
+.s <2> 0 7FFFFFFFFFFFFF  ok
+dup  ok
+4 *  ok
+.s <3> 0 7FFFFFFFFFFFFF 1FFFFFFFFFFFFFC  ok
+decima. 
+:76: Undefined word
+>>>decima.<<<
+Backtrace:
+$7F48EA037A68 throw 
+$7F48EA04DDB0 no.extensions 
+$7F48EA037D28 interpreter-notfound1 
+0 7FFFFFFFFFFFFF 1FFFFFFFFFFFFFC  ok
+.s <3> 0 7FFFFFFFFFFFFF 1FFFFFFFFFFFFFC  ok
+decimal  ok
+.s <3> 0 36028797018963967 144115188075855868  ok
+drop  ok
+dup  ok
+8 * .s <3> 0 36028797018963967 288230376151711736  ok
+hex  ok
+.s <3> 0 7FFFFFFFFFFFFF 3FFFFFFFFFFFFF8  ok
+8 * .s <3> 0 7FFFFFFFFFFFFF 1FFFFFFFFFFFFFC0  ok
+8 * .s <3> 0 7FFFFFFFFFFFFF -200  ok
+drop  ok
+.s <2> 0 7FFFFFFFFFFFFF  ok
+dup  ok
+8 * .s <3> 0 7FFFFFFFFFFFFF 3FFFFFFFFFFFFF8  ok
+8 * .s <3> 0 7FFFFFFFFFFFFF 1FFFFFFFFFFFFFC0  ok
+4 * .s <3> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF00  ok
+.s <3> 0 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF00  ok
+FF + swap dup .s <4> 0 7FFFFFFFFFFFFFFF 7FFFFFFFFFFFFF 7FFFFFFFFFFFFF  ok
+drop drop  ok
+.s <2> 0 7FFFFFFFFFFFFFFF  ok
+decimal  ok
+dup . 9223372036854775807  ok
+hex .s <2> 0 7FFFFFFFFFFFFFFF  ok
+.s <2> 0 7FFF FFFF FFFF FFFF  ok
+.s <2> 0 7FFFFFFFFFFFFFFF  ok
+         FFFFFFFFFFFFFFFE  ok
+.s <3> 0 7FFFFFFFFFFFFFFF -2  ok
+drop  ok
+-B00000000  ok
+.s <3> 0 7FFFFFFFFFFFFFFF -B00000000  ok
+decimal  ok
+.s <3> 0 9223372036854775807 -47244640256  ok
+drop  ok
+.s <2> 0 9223372036854775807  ok
+dup  ok
+.s <3> 0 9223372036854775807 9223372036854775807  ok
+negate  ok
+.s <3> 0 9223372036854775807 -9223372036854775807  ok
+hex  ok
+dup  ok
+.s <4> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF  ok
+1 +  ok
+.s <4> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFE  ok
+1 - .s <4> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF  ok
+1 - .s <4> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF -8000000000000000  ok
+1 - .s <4> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF 7FFFFFFFFFFFFFFF  ok
+decimal . 9223372036854775807  ok
+1 + .s <3> 0 9223372036854775807 -9223372036854775806  ok
+1 - .s <3> 0 9223372036854775807 -9223372036854775807  ok
+1 - .s <3> 0 9223372036854775807 -9223372036854775808  ok
+1 - .s <3> 0 9223372036854775807 9223372036854775807  ok
+1 - .s <3> 0 9223372036854775807 9223372036854775806  ok
+1 - .s <3> 0 9223372036854775807 9223372036854775805  ok
+1 - .s <3> 0 9223372036854775807 9223372036854775804  ok
+1 + .s <3> 0 9223372036854775807 9223372036854775805  ok
+1 + .s <3> 0 9223372036854775807 9223372036854775806  ok
+1 + .s <3> 0 9223372036854775807 9223372036854775807  ok
+1 + .s <3> 0 9223372036854775807 -9223372036854775808  ok
+1 + .s <3> 0 9223372036854775807 -9223372036854775807  ok
+1 + .s <3> 0 9223372036854775807 -9223372036854775806  ok
+1 + .s <3> 0 9223372036854775807 -9223372036854775805  ok
+hex  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFE  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF -7FFFFFFFFFFFFFFF  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF -8000000000000000  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF 7FFFFFFFFFFFFFFF  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF 7FFFFFFFFFFFFFFE  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF 7FFFFFFFFFFFFFFD  ok
+1 - .s <3> 0 7FFFFFFFFFFFFFFF 7FFFFFFFFFFFFFFC  ok
+binary  ok
+    .s <11> 0 111111111111111111111111111111111111111111111111111111111111111 111111111111111111111111111111111111111111111111111111111111100  ok
+1 + .s <11> 0 111111111111111111111111111111111111111111111111111111111111111 111111111111111111111111111111111111111111111111111111111111101  ok
+1 + .s <11> 0 111111111111111111111111111111111111111111111111111111111111111 111111111111111111111111111111111111111111111111111111111111110  ok
+1 + .s <11> 0 111111111111111111111111111111111111111111111111111111111111111 111111111111111111111111111111111111111111111111111111111111111  ok
+1 + .s <11> 0 111111111111111111111111111111111111111111111111111111111111111 -1000000000000000000000000000000000000000000000000000000000000000  ok
+swap drop  ok
+.s <10> 0 -1000000000000000000000000000000000000000000000000000000000000000  ok
+swap drop .s <1> -1000000000000000000000000000000000000000000000000000000000000000  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111111  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111110  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111101  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111100  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111011  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111010  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111001  ok
+1 - .s <1> 111111111111111111111111111111111111111111111111111111111111000  ok
+hex .s <1> 7FFFFFFFFFFFFFF8  ok
+binary  ok
+
+1 + .s
+
+1 - .s
+
+
+
+    .s <1>   111111111111111111111111111111111111111111111111111111111111000  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111001  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111010  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111011  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111100  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111101  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111110  ok
+1 + .s <1>   111111111111111111111111111111111111111111111111111111111111111  ok
+1 + .s <1> -1000000000000000000000000000000000000000000000000000000000000000  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111111  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111110  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111101  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111100  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111011  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111010  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111001  ok
+1 + .s <1>  -111111111111111111111111111111111111111111111111111111111111000  ok
+hex .s <1>  -7FFFFFFFFFFFFFF8  ok
+1 - .s <1> -7FFFFFFFFFFFFFF9  ok
+1 - .s <1> -7FFFFFFFFFFFFFFA  ok
+1 - .s <1> -7FFFFFFFFFFFFFFB  ok
+1 - .s <1> -7FFFFFFFFFFFFFFC  ok
+1 - .s <1> -7FFFFFFFFFFFFFFD  ok
+1 - .s <1> -7FFFFFFFFFFFFFFE  ok
+1 - .s <1> -7FFFFFFFFFFFFFFF  ok
+1 - .s <1> -8000000000000000  ok
+1 - .s <1> 7FFFFFFFFFFFFFFF  ok
+1 - .s <1> 7FFFFFFFFFFFFFFE  ok
+1 - .s <1> 7FFFFFFFFFFFFFFD  ok
+1 - .s <1> 7FFFFFFFFFFFFFFC  ok
+1 - .s <1> 7FFFFFFFFFFFFFFB  ok
+1 - .s <1> 7FFFFFFFFFFFFFFA  ok
+1 - .s <1> 7FFFFFFFFFFFFFF9  ok
+decimal  ok
+    .s <1> 9223372036854775801  ok
+1 + .s <1> 9223372036854775802  ok
+1 + .s <1> 9223372036854775803  ok
+1 + .s <1> 9223372036854775804  ok
+1 + .s <1> 9223372036854775805  ok
+1 + .s <1> 9223372036854775806  ok
+1 + .s <1> 9223372036854775807  ok
+1 + .s <1> -9223372036854775808  ok
+1 + .s <1> -9223372036854775807  ok
+1 + .s <1> -9223372036854775806  ok
+1 + .s <1> -9223372036854775805  ok
+1 + .s <1> -9223372036854775804  ok
+1 + .s <1> -9223372036854775803  ok
+1 + .s <1> -9223372036854775802  ok
+1 + .s <1> -9223372036854775801  ok
+  ok
+  ok
+1 - .s <1> -9223372036854775802  ok
+1 - .s <1> -9223372036854775803  ok
+1 - .s <1> -9223372036854775804  ok
+1 - .s <1> -9223372036854775805  ok
+1 - .s <1> -9223372036854775806  ok
+binary dup . -111111111111111111111111111111111111111111111111111111111111110  ok
+binary dup U. 1000000000000000000000000000000000000000000000000000000000000010  ok
+hex dup . -7FFFFFFFFFFFFFFE  ok
+hex dup U. 8000000000000002  ok
+1 - .s <1> -7FFFFFFFFFFFFFFF  ok
+decimal dup . -9223372036854775807  ok
+binary dup . -111111111111111111111111111111111111111111111111111111111111111  ok
+binary dup U. 1000000000000000000000000000000000000000000000000000000000000001  ok
+hex dup . -7FFFFFFFFFFFFFFF  ok
+hex dup U. 8000000000000001  ok
+decimal dup U. 9223372036854775809  ok
+decimal dup  . -9223372036854775807  ok
+1 - .s <1> -9223372036854775808  ok
+dup  . -9223372036854775808  ok
+dup U. 9223372036854775808  ok
+binary dup . -1000000000000000000000000000000000000000000000000000000000000000  ok
+binary dup U. 1000000000000000000000000000000000000000000000000000000000000000  ok
+hex dup     . -8000000000000000  ok
+hex dup    U. 8000000000000000  ok
+1 -    .s <1> 7FFFFFFFFFFFFFFF  ok
+hex dup     . 7FFFFFFFFFFFFFFF  ok
+hex dup    U. 7FFFFFFFFFFFFFFF  ok
+decimal dup . 9223372036854775807  ok
+      dup  U. 9223372036854775807  ok
+      dup  U. 9223372036854775807  ok
+binary  ok
+      dup   . 111111111111111111111111111111111111111111111111111111111111111  ok
+      dup  U. 111111111111111111111111111111111111111111111111111111111111111  ok
+( everyone agrees below 0x8000000000000000 - dot is U-dot below it )  ok
+( 0x8000 0000 0000 0000  64 bits ( 0x8000000000000000 )  ok
+.s <1> 111111111111111111111111111111111111111111111111111111111111111  ok
+dup         . 111111111111111111111111111111111111111111111111111111111111111  ok
+hex  ok
+dup         . 7FFFFFFFFFFFFFFF  ok
+1 - 1 - 1 -  ok
+dup         . 7FFFFFFFFFFFFFFC  ok
+       .s <1> 7FFFFFFFFFFFFFFC  ok
+binary .s <1> 111111111111111111111111111111111111111111111111111111111111100  ok
+hex    .s <1> 7FFFFFFFFFFFFFFC  ok
+decimal .s <1> 9223372036854775804  ok
+  ok
+
+
+hex      .s
+decimal  .s
+binary   .s
+1 +
+
+hex      .s <1> 7FFFFFFFFFFFFFFC  ok
+decimal  .s <1> 9223372036854775804  ok
+binary   .s <1> 111111111111111111111111111111111111111111111111111111111111100  ok
+hex      .s <1> 7FFFFFFFFFFFFFFC  ok
+decimal  .s <1> 9223372036854775804  ok
+binary   .s <1> 111111111111111111111111111111111111111111111111111111111111100  ok
+1 +  ok
+hex      .s <1> 7FFFFFFFFFFFFFFD  ok
+decimal  .s <1> 9223372036854775805  ok
+binary   .s <1> 111111111111111111111111111111111111111111111111111111111111101  ok
+1 +  ok
+hex      .s <1> 7FFFFFFFFFFFFFFE  ok
+decimal  .s <1> 9223372036854775806  ok
+binary   .s <1> 111111111111111111111111111111111111111111111111111111111111110  ok
+1 +  ok
+hex      .s <1> 7FFFFFFFFFFFFFFF  ok
+decimal  .s <1> 9223372036854775807  ok
+binary   .s <1> 111111111111111111111111111111111111111111111111111111111111111  ok
+1 +  ok
+hex      .s <1> -8000000000000000  ok
+decimal  .s <1> -9223372036854775808  ok
+binary   .s <1> -1000000000000000000000000000000000000000000000000000000000000000  ok
+1 +  ok
+hex       dup  . -7FFFFFFFFFFFFFFF  ok
+hex      dup  U. 8000000000000001  ok
+decimal   dup  . -9223372036854775807  ok
+decimal   dup U. 9223372036854775809  ok
+binary    dup  . -111111111111111111111111111111111111111111111111111111111111111  ok
+binary    dup U. 1000000000000000000000000000000000000000000000000000000000000001  ok
+          .s <1> -111111111111111111111111111111111111111111111111111111111111111  ok
+1 - dup U. 1000000000000000000000000000000000000000000000000000000000000000  ok
+1 - dup U. 111111111111111111111111111111111111111111111111111111111111111  ok
+1 - dup U. 111111111111111111111111111111111111111111111111111111111111110  ok
+1 - dup U. 111111111111111111111111111111111111111111111111111111111111101  ok
+1 - dup U. 111111111111111111111111111111111111111111111111111111111111100  ok
+1 - dup U. 111111111111111111111111111111111111111111111111111111111111011  ok
+hex     U. 7FFFFFFFFFFFFFFB  ok
+1 + dup U. 
+:300: Stack underflow
+1 >>>+<<< dup U.
+Backtrace:
+bye 
+
+ $ gforth
+
+Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+7FFFFFFFFFFFFFFB 
+:1: Undefined word
+>>>7FFFFFFFFFFFFFFB<<<
+Backtrace:
+$7FD1E1023A68 throw 
+$7FD1E1039DB0 no.extensions 
+$7FD1E1023D28 interpreter-notfound1 
+hex  ok
+bye 
+
+ $ gforth
+
+Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+hex  ok
+7FFFFFFFFFFFFFFB  ok
+binary dup  U. 
+:3: Undefined word
+>>>binary<<< dup  U.
+Backtrace:
+$7F02631F4A68 throw 
+$7F026320ADB0 no.extensions 
+$7F02631F4D28 interpreter-notfound1 
+bye 
+
+ $ ls
+slimit.fs
+
+ $ gforth slimit.fs
+
+Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+
+1 +        dup U.
+
+
+
+hex  ok
+binary  ok
+hex  ok
+7FFFFFFFFFFFFFFB  ok
+binary  ok
+dup U. 111111111111111111111111111111111111111111111111111111111111011  ok
+1 - 1 - 1 - 1 -  ok
+hex dup U. 7FFFFFFFFFFFFFF7  ok
+binary dup U. 111111111111111111111111111111111111111111111111111111111110111  ok
+1 +    dup U. 111111111111111111111111111111111111111111111111111111111111000  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111001  ok
+hex dup . 7FFFFFFFFFFFFFF9  ok
+1 - 1 - 1 -  ok
+.s <1> 7FFFFFFFFFFFFFF6  ok
+1 +  ok
+.s <1> 7FFFFFFFFFFFFFF7  ok
+1 -  ok
+.s <1> 7FFFFFFFFFFFFFF6  ok
+binary  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111110111  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111000  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111001  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111010  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111011  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111100  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111101  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111110  ok
+1 +      dup U. 111111111111111111111111111111111111111111111111111111111111111  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000000  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000001  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000010  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000011  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000100  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000101  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000110  ok
+1 +      dup U. 1000000000000000000000000000000000000000000000000000000000000111  ok
+
+1 +      dup  .
+
+
+hex      dup  . -7FFFFFFFFFFFFFF9  ok
+4 -      dup  . -7FFFFFFFFFFFFFFD  ok
+4 -      dup  . 7FFFFFFFFFFFFFFF  ok
+0 +      dup U. 7FFFFFFFFFFFFFFF  ok
+0 +      dup  . 7FFFFFFFFFFFFFFF  ok
+1 +  ok
+0 +      dup U. 8000000000000000  ok
+0 +      dup  . -8000000000000000  ok
+binary  ok
+         dup U. 1000000000000000000000000000000000000000000000000000000000000000  ok
+         dup  . -1000000000000000000000000000000000000000000000000000000000000000  ok
+hex      dup  . -8000000000000000  ok
+8 -      dup  . 7FFFFFFFFFFFFFF8  ok
+1 -      dup  . 7FFFFFFFFFFFFFF7  ok
+binary   dup  . 111111111111111111111111111111111111111111111111111111111110111  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111000  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111001  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111010  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111011  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111100  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111101  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111110  ok
+1 +      dup  . 111111111111111111111111111111111111111111111111111111111111111  ok
+1 +      dup  . -1000000000000000000000000000000000000000000000000000000000000000  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111111  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111110  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111101  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111100  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111011  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111010  ok
+1 +      dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+         dup U. 1000000000000000000000000000000000000000000000000000000000000111  ok
+         dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+         dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+         dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+         dup U. 1000000000000000000000000000000000000000000000000000000000000111  ok
+         dup U. 1000000000000000000000000000000000000000000000000000000000000111  ok
+         dup U. 1000000000000000000000000000000000000000000000000000000000000111  ok
+         dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+         dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+         dup  . -111111111111111111111111111111111111111111111111111111111111001  ok
+hex  ok
+         dup  . -7FFFFFFFFFFFFFF9  ok
+         dup  . -7FFFFFFFFFFFFFF9  ok
+         dup U. 8000000000000007  ok
+         dup U. 8000000000000007  ok
+5 3 * . F  ok
+8 -  ok
+          .s <1> 7FFFFFFFFFFFFFFF  ok
+1 +       .s <1> -8000000000000000  ok
+1 -       .s <1> 7FFFFFFFFFFFFFFF  ok
+1 -       .s <1> 7FFFFFFFFFFFFFFE  ok
+binary  ok
+        dup .   111111111111111111111111111111111111111111111111111111111111110  ok
+1 + dup     .   111111111111111111111111111111111111111111111111111111111111111  ok
+1 + dup     . -1000000000000000000000000000000000000000000000000000000000000000  ok
+1 + dup     .  -111111111111111111111111111111111111111111111111111111111111111  ok
+
+1 - 1 - 1 -  ok
+1 + dup     .   111111111111111111111111111111111111111111111111111111111111111  ok
+1 + dup     . -1000000000000000000000000000000000000000000000000000000000000000  ok
+1 + dup     .  -111111111111111111111111111111111111111111111111111111111111111  ok
+1 + dup     .  -111111111111111111111111111111111111111111111111111111111111110  ok
+drop 0  ok
+1 + dup     . 1  ok
+1 - dup     . 0  ok
+1 - dup     . -1  ok
+1 - dup     . -10  ok
+1000 - dup  . -1010  ok
+hex  ok
+7FFFFFFFFFFFFF -  ok
+dup         . -80000000000009  ok
+1000 + dup  . -7FFFFFFFFFF009  ok
+1000 + dup  . -7FFFFFFFFFE009  ok
+1    + dup  . -7FFFFFFFFFE008  ok
+10000000 +  ok
+       dup  . -7FFFFFEFFFE008  ok
+E0000000000000  ok
++  ok
+       dup  . 60000010001FF8  ok
+              50000000000000  ok
+-  ok
+       dup  . 10000010001FF8  ok
+.s <1> 10000010001FF8  ok
+        B000000000000 +  ok
+.s <1> 1B000010001FF8  ok
+       50FFFF0FFF0000 +  ok
+dup . 6BFFFF1FFF1FF8  ok
+decimal dup . 30399293726597112  ok
+hex dup . 6BFFFF1FFF1FF8  ok
+          7FFFFFFFFFFFFFFF  ok
+drop  ok
+10 *  ok
+10 *  ok
+.s <1> 6BFFFF1FFF1FF800  ok
+FF +  ok
+.s <1> 6BFFFF1FFF1FF8FF  ok
+        500000000000000 +  ok
+dup . 70FFFF1FFF1FF8FF  ok
+       B00000000000000 +  ok
+dup . 7BFFFF1FFF1FF8FF  ok
+.s <1> 7BFFFF1FFF1FF8FF  ok
+decimal dup . 8 935 140 698 615 707 903  ok
+.s <1> 8935140698615707903  ok
+drop  ok
+decimal 2 2 * . 4  ok
+decimal 2 2 * dup * . 16  ok
+decimal 2 2 * dup * dup * . 256  ok
+.s <0>  ok
+decimal 2 2 * dup * dup * dup * . 65536  ok
+.s <0>  ok
+decimal 2 2 * dup * dup * dup * . 65536  ok
+decimal 2 2 * dup * dup * dup * binary . 1 0000 0000 0000 0000  ok
+decimal 2 2 * dup * dup * binary . 1 0000 0000  ok
+.s <0>  ok
+decimal 1 1 + . 2  ok
+decimal 1 1 + dup * . 4  ok
+decimal 1 1 + dup * dup * . 16  ok
+decimal 1 1 + dup * dup * dup * . 256  ok
+decimal 1 1 + dup * dup * dup * binary . 1 0000 0000  ok
+decimal 1 1 + dup * dup * dup * 1 1 + / . 128  ok
+decimal 1 1 + dup * dup * dup * 1 1 + / binary . 1000 0000  ok
+decimal 1 1   + dup * dup * dup * 1 1   + / 1 - binary   . 111 1111  ok
+decimal 1 dup + dup * dup * dup * 1 dup + / 1 - binary   . 111 1111  ok
+decimal 1 dup + dup * dup * dup * 1 dup + / 1 - hex      . 7F  ok
+decimal 1 dup + dup * dup * dup * 1 dup + / 1 - decimal   . 127  ok
+decimal 1 dup + dup * dup * dup * 1 dup + / 1 - decimal  U. 127  ok
+decimal 1 dup   + dup * dup * dup * 1 dup + / 1 - decimal   . 127  ok
+: n7F ( -- 7f )  compiled
+  decimal 1 dup + dup * dup * dup * 1 dup + / 1 - ;  ok
+.s <0>  ok
+n7f binary    . 1111111  ok
+n7f hex       . 7F  ok
+n7f decimal   . 127  ok
+.s <0>  ok
+hex n7f 1 + 2 * 2 * 2 * 2 * 1 -                           hex .  7FF  ok
+hex n7f 1 + 2 * 2 * 2 * 2 * 2 * 1 -                       hex .  FFF  ok
+hex n7f 1 + 2 * 2 * 2 * 2 * 2 * 2 * 1 -                   hex . 1FFF  ok
+hex n7f 1 + 2 * 2 * 2 * 2 * 2 * 2 * 2 * 1 -               hex . 3FFF  ok
+hex n7f 1 + 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 1 -           hex . 7FFF  ok
+hex n7f 1 + 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 1 -       hex . FFFF  ok
+hex n7f      1 + 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 1 -  hex . 1FFFF  ok
+: promote ( n f - b )  compiled
+  hex n7f 1 +  compiled
+  swap  compiled
+  0 DO  compiled
+    2 *  compiled
+  LOOP  compiled
+  1 -  compiled
+;  ok
+.s <0>  ok
+3 promote  ok
+.s <1> 1023  ok
+hex . 3FF  ok
+.s <0>  ok
+2 promote hex . 1FF  ok
+
+  1  promote  hex   .  FF  ok
+  2  promote  hex   . 1FF  ok
+  3  promote  hex   . 3FF  ok
+ 
+  1  promote  hex   .  FF  ok
+  2  promote  hex   . 1FF  ok
+.s <0>  ok
+  1  promote  hex         . FF  ok
+  2  promote  hex         . 1FF  ok
+  3  promote  hex         . 3FF  ok
+  4  promote  hex         . 7FF  ok
+  5  promote  hex         . FFF  ok
+  6  promote  hex         . 1FFF  ok
+  7  promote  hex         . 3FFF  ok
+  8  promote  hex         . 7FFF  ok
+  9  promote  hex         . FFFF  ok
+hex  A  ok
+     promote  hex         . 1FFFF  ok
+hex  B  ok
+     promote  hex         . 3FFFF  ok
+hex  C  ok
+     promote  hex         . 7FFFF  ok
+hex  D  promote  hex         . FFFFF  ok
+hex  E  promote  hex         . 1FFFFF  ok
+hex  F  promote  hex         . 3FFFFF  ok
+hex 10  promote  hex         . 7FFFFF  ok
+hex 11  promote  hex         . FFFFFF  ok
+
+ ( prototype here: )
+
+hex 12  promote  hex         .
+
+
+hex 12  promote  hex         . 1FFFFFF  ok
+hex 12  promote  hex         . 1FFFFFF  ok
+hex 12  promote  hex         . 1FFFFFF  ok
+hex 13  promote  hex         . 3FFFFFF  ok
+hex 14  promote  hex         . 7FFFFFF  ok
+hex 15  promote  hex         . FFFFFFF  ok
+hex 16  promote  hex         . 1FFFFFFF  ok
+hex 17  promote  hex         . 3FFFFFFF  ok
+hex 18  promote  hex         . 7FFFFFFF  ok
+hex 19  promote  hex         . FFFFFFFF  ok
+hex 1A  promote  hex         . 1FFFFFFFF  ok
+hex 1B  promote  hex         . 3FFFFFFFF  ok
+hex 1C  promote  hex         . 7FFFFFFFF  ok
+hex 1D  promote  hex         . FFFFFFFFF  ok
+hex 1E  promote  hex         . 1FFFFFFFFF  ok
+hex 1F  promote  hex         . 3FFFFFFFFF  ok
+hex 20  promote  hex         . 7FFFFFFFFF  ok ( ten hex digits in the answer )
+hex 21  promote  hex         . FFFFFFFFFF  ok
+hex 22  promote  hex         . 1FFFFFFFFFF  ok
+hex 23  promote  hex         . 3FFFFFFFFFF  ok
+hex 24  promote  hex         . 7FFFFFFFFFF  ok
+hex 25  promote  hex         . FFFFFFFFFFF  ok
+hex 26  promote  hex         . 1FFFFFFFFFFF  ok
+hex 27  promote  hex         . 3FFFFFFFFFFF  ok
+hex 28  promote  hex         . 7FFFFFFFFFFF  ok ( twelve digits )
+hex 29  promote  hex         . FFFFFFFFFFFF  ok
+hex 2A  promote  hex         . 1FFFFFFFFFFFF  ok
+hex 2B  promote  hex         . 3FFFFFFFFFFFF  ok
+hex 2C  promote  hex         . 7FFFFFFFFFFFF  ok
+hex 2D  promote  hex         . FFFFFFFFFFFFF  ok
+hex 2E  promote  hex         . 1FFFFFFFFFFFFF  ok
+hex 2F  promote  hex         . 3FFFFFFFFFFFFF  ok
+hex 30  promote  hex         . 7FFFFFFFFFFFFF  ok ( fourteen hex digits )
+hex 31  promote  hex         . FFFFFFFFFFFFFF  ok ( still fourteen )
+hex 32  promote  hex         . 1FFFFFFFFFFFFFF  ok ( fifteen )
+
+
+
+
+hex 33  promote  hex         . 3FFFFFFFFFFFFFF  ok
+.s <0>  ok
+hex 31  promote  hex         . FFFFFFFFFFFFFF  ok
+hex 32  promote  hex         . 1FFFFFFFFFFFFFF  ok
+hex 33  promote  hex         . 3FFFFFFFFFFFFFF  ok
+hex 34  promote  hex         . 7FFFFFFFFFFFFFF  ok
+hex 35  promote  hex         . FFFFFFFFFFFFFFF  ok ( four unused bits fifteen digits ) 
+.s <0>  ok
+hex 35   promote  hex         . FFFFFFFFFFFFFFF  ok
+hex 35  promote  hex         . FFFFFFFFFFFFFFF  ok
+hex 34  promote  hex         . 7FFFFFFFFFFFFFF  ok
+hex 35  promote  hex         . FFFFFFFFFFFFFFF  ok
+hex 36  promote  hex         . 1FFFFFFFFFFFFFFF  ok ( three unused bits )
+
+hex 37  promote  hex         . 3FFFFFFFFFFFFFFF  ok ( two unused bits )
+hex 37  promote  binary      . 11111111111111111111111111111111111111111111111111111111111111  ok
+hex 38  promote  hex         . 7FFFFFFFFFFFFFFF  ok ( one unused bit - signed max )
+hex 38  promote  decimal     . 9223372036854775807  ok
+hex 38  promote  decimal 1 + . -9223372036854775808  ok ( overflow - MS bit set )
+hex 38  promote  binary  1 + . -1000000000000000000000000000000000000000000000000000000000000000  ok
+hex 38  promote  binary  0 + . 111111111111111111111111111111111111111111111111111111111111111  ok
+hex 38  promote  binary  1 - . 111111111111111111111111111111111111111111111111111111111111110  ok
+hex 38  promote  32 - binary . 111111111111111111111111111111111111111111111111111111111011111  ok
+hex 38  promote  ok
+5 3 * . 15  ok
+32 - binary . 111111111111111111111111111111111111111111111111111111111011111  ok
+hex 38  promote   8 - binary . 111111111111111111111111111111111111111111111111111111111110111  ok
+hex 38  promote   8 - binary  ok
+.s <1> 111111111111111111111111111111111111111111111111111111111110111  ok
+hex 38  promote   4 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111011  ok
+depth . 1  ok
+drop  ok
+.s <0>  ok
+hex 38  promote   4 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111011  ok
+hex 38  promote   3 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111100  ok
+hex 38  promote   3 - binary  ok
+1 - . 111111111111111111111111111111111111111111111111111111111111011  ok
+hex 38  promote   2 - binary  ok
+    . 111111111111111111111111111111111111111111111111111111111111101  ok
+depth . 0  ok
+hex 38  promote   4 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111011  ok
+hex 38  promote   3 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111100  ok
+hex 38  promote   2 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111101  ok
+hex 38  promote   1 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111110  ok
+hex 38  promote   0 + binary  ok
+. 111111111111111111111111111111111111111111111111111111111111111  ok
+hex 38  promote   1 + binary  ok
+. -1000000000000000000000000000000000000000000000000000000000000000  ok
+hex 38  promote   1 + decimal  ok
+. -9223372036854775808  ok
+hex 38  promote   1 + hex  ok
+. -8000000000000000  ok
+hex 38  promote   4 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111011  ok
+hex 38  promote   4 - decimal  ok
+. 9223372036854775803  ok
+hex 38  promote   4 - hex  ok
+. 7FFFFFFFFFFFFFFB  ok
+hex 38  promote   3 - binary ( sequence: binary, decimal, hex )  ok
+. 111111111111111111111111111111111111111111111111111111111111100  ok
+hex 38  promote   3 - decimal  ok
+. 9223372036854775804  ok
+hex 38  promote   3 - hex  ok
+. 7FFFFFFFFFFFFFFC  ok
+hex 38  promote   3 - hex  ok
+. 7FFFFFFFFFFFFFFC  ok
+.s <0>  ok
+( stanza is:  'hex 38  promote   ' pasted in )  ok
+.s <0>  ok
+hex 38  promote   3 - hex  ok
+. 7FFFFFFFFFFFFFFC  ok
+( bin dec hex )  ok
+.s <0>  ok
+hex 38  promote   3 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111100  ok
+hex 38  promote   3 - decimal  ok
+. 9223372036854775804  ok
+hex 38  promote   3 - hex  ok
+. 7FFFFFFFFFFFFFFC  ok
+  ok
+hex 38  promote   2 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111101  ok
+hex 38  promote   2 - decimal  ok
+. 9223372036854775805  ok
+hex 38  promote   2 - hex  ok
+. 7FFFFFFFFFFFFFFD  ok
+  ok
+( stanza )  ok
+  ok
+hex 38  promote   1 - binary  ok
+. 111111111111111111111111111111111111111111111111111111111111110  ok
+hex 38  promote   1 - decimal  ok
+. 9223372036854775806  ok
+hex 38  promote   1 - hex  ok
+. 7FFFFFFFFFFFFFFE  ok
+  ok
+( stanza )  ok
+.s <0>  ok
+  ok
+hex 38  promote   0 + binary  ok
+. 111111111111111111111111111111111111111111111111111111111111111  ok
+( maximum - all binary digits set except MS bit )  ok
+  ok
+.s <0>  ok
+  ok
+hex 38  promote   0 + decimal  ok
+. 9223372036854775807  ok
+hex 38  promote   0 + hex  ok
+. 7FFFFFFFFFFFFFFF  ok
+  ok
+( stanza )  ok
+  ok
+( adding one more puts it into negative signed integers )  ok
+  ok
+hex 38  promote   1 + binary  ok
+. -1000000000000000000000000000000000000000000000000000000000000000  ok
+( there it is - overflowed - MS bit set only )  ok
+hex 38  promote   1 + decimal  ok
+. -9223372036854775808  ok
+( that's the decimal expression of the very same condition )  ok
+hex 38  promote   1 + hex  ok
+. -8000 0000 0000 0000  ok
+( in hexadecimal, the same condition is expressed as )  ok
+( negative 0x8000000000000000 in sixteen hex digits )  ok
+.s <0>  ok
+hex 38  promote   2 + binary  ok
+. -1111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111  ok
+( say something about two's complement, negative binary number expressions )  ok
+( note all the bits are set - count them )  ok
+( there is one less than the number of bits possible: 63 bits are set 'visibly' )  ok
+( the MS bit is reserved for the sign - a set bit means negatively signed integer )  ok
+hex 38  promote   2 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111111  ok
+( bin dec hex shown )  ok
+hex 38  promote   2 + decimal  ok
+. -9223372036854775807  ok
+hex 38  promote   2 + hex  ok
+. -7FFFFFFFFFFFFFFF  ok
+( that's the 63 bit maximum value, in hex, plus the MS bit set for a negative sign )[1A( that's the 63 bit maximum value, in hex, plus the MS bit set for a negative sign )[1A( that's the 63 bit maximum value, in hex, plus the MS bit set for a negative sign )  ok
+.s <0>  ok
+  ok
+hex 38  promote   
+
+hex 38  promote   2 + hex  ok
+. -7FFFFFFFFFFFFFFF  ok
+( bin dec hex to show )  ok
+hex 38  promote   3 + hex  ok
+. -7FFFFFFFFFFFFFFE  ok
+( they are counting down as 'one' is added each iteration )  ok
+( becoming 'less negative' than the prior iteration )  ok
+
+.s <0>  ok
+hex 38  promote   3 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111110  ok
+hex 38  promote   3 + decimal  ok
+. -9223372036854775806  ok
+( redo from '2' )  ok
+.s <0>  ok
+  ok
+  ok
+.s <0>  ok
+.s <0>  ok
+hex 38  promote   2 + binary ( bin dec hex )  ok
+. -111111111111111111111111111111111111111111111111111111111111111  ok
+hex 38  promote   2 + decimal  ok
+. -9223372036854775807  ok
+hex 38  promote   2 + hex  ok
+. -7FFFFFFFFFFFFFFF  ok
+hex 38  promote   3 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111110  ok
+hex 38  promote   3 + decimal  ok
+. -9223372036854775806  ok
+hex 38  promote   3 + hex  ok
+. -7FFFFFFFFFFFFFFE  ok
+hex 38  promote   4 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111101  ok
+hex 38  promote   4 + decimal  ok
+. -9223372036854775805  ok
+hex 38  promote   4 + hex  ok
+. -7FFFFFFFFFFFFFFD  ok
+hex 38  promote   5 + binary  ok
+hex 38  promote   5 + binary  ok
+drop  ok
+drop  ok
+.s <0>  ok
+hex 38  promote   5 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111100  ok
+hex 38  promote   5 + decimal  ok
+. -9223372036854775804  ok
+hex 38  promote   5 + hex  ok
+hex 38  promote   5 + hex  ok
+drop drop  ok
+.s <0>  ok
+hex 38  promote   5 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111100  ok
+hex 38  promote   5 + decimal  ok
+. -9223372036854775804  ok
+hex 38  promote   5 + hex  ok
+. -7FFFFFFFFFFFFFFC  ok
+  ok
+hex 38  promote   6 + binary  ok
+. -111111111111111111111111111111111111111111111111111111111111011  ok
+hex 38  promote   6 + decimal  ok
+. -9223372036854775803  ok
+hex 38  promote   6 + hex  ok
+. -7FFFFFFFFFFFFFFB  ok
+( the point of 'promote' is to iterate by number of bits )  ok
+( want to try fewer bits to simulate 32 bit and 8 bit machines )  ok
+hex 38 decimal . 56  ok
+( so 'hex 38' has something to do with 64 - 8 bits or 56 bits, plus or minus a bit )[1A( so 'hex 38' has something to do with 64 - 8 bits or 56 bits, plus or minus a bit )[1A( so 'hex 38' has something to do with 64 - 8 bits or 56 bits, plus or minus a bit )  ok
+( or perhaps exactly )  ok
+decimal 56 8 - hex . 30  ok
+( 30 vs 38 there )  ok
+hex 30 decimal . 48  ok
+( indeed 8 fewer )  ok
+hex 30 promote 3 - binary  ok
+. 1111111111111111111111111111111111111111111111111111100  ok
+.s <0>  ok
+hex 30 promote 3 - decimal  ok
+. 36028797018963964  ok
+hex 30 promote 3 - hex  ok
+. 7F FFFF FFFF FFFC  ok
+( somewhere near 56 bits here )  ok
+hex 30 promote 1 - hex  ok
+. 7FFFFFFFFFFFFE  ok
+hex 30 promote 0 + hex  ok
+. 7F FFFF FFFF FFFF  ok
+( that's 55 bits as shown below )  ok
+.s <0>  ok
+hex 30 promote 0 + binary  ok
+. 111 1111  1111 1111 1111 1111  1111 1111 1111 1111  1111 1111 1111 1111  ok
+( decimal 23 + 32 is 55 )  ok
+.s <0>  ok
+hex 30 promote 1 + binary  ok
+. 10000000000000000000000000000000000000000000000000000000  ok
+( there is the overflow bit - the 56th bit got set )  ok
+( we are in gforth )  ok
+.s <0>  ok
+bye 
+
+ $  gforth slimit.fs
+
+Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+.s <0>  ok
+hex 30 promote 0 + binary  ok
+. 1111111111111111111111111111111111111111111111111111111  ok
+.s <0>  ok
+hex 30 promote 1 + binary  ok
+. 10000000000000000000000000000000000000000000000000000000  ok
+hex 30 promote 1 + hex  ok
+. 80000000000000  ok
+hex 30 promote 1 + decimal  ok
+. 36028797018963968  ok
+( that's a 56 bit computer if one exists ) ( 64 - 8 = 56 )  ok
+hex 30 8 - . 28  ok
+hex 28 decimal . 40  ok
+hex 30 decimal . 48  ok
+hex 38 decimal . 56  ok
+hex 30 decimal . 48  ok
+hex 28 decimal . 40  ok
+hex 20 decimal . 32  ok
+hex 18 decimal . 24  ok
+hex 10 decimal . 16  ok
+hex  8 decimal . 8  ok
+hex  1 decimal . 1  ok
+.s <0>  ok
+hex 30 promote 1 - binary  ok
+. 1111111111111111111111111111111111111111111111111111110  ok
+hex 30 promote 1 - hex  ok
+. 7FFFFFFFFFFFFE  ok
+hex 28 promote 1 - hex  ok
+. 7FFFFFFFFFFE  ok
+( use hex 28 for a 48 bit computer simulator )  ok
+( bin dec hex )  ok
+.s <0>  ok
+
+.s <0>  ok
+.s <0>  ok
+hex 28 promote .s <1> 140737488355327  ok
+( that's in decimal )  ok
+drop  ok
+.s <0>  ok
+hex 28 promote 3 - bin  ok
+. 140737488355325  ok
+bye 
+
+ $ gforth ./slimit.fs 
+
+Gforth 0.7.3, Copyright (C) 1995-2008 Free Software Foundation, Inc.
+Gforth comes with ABSOLUTELY NO WARRANTY; for details type `license'
+Type `bye' to exit
+.s <0>  ok
+hex 28 promote 3 - binary  ok
+. 11111111111111111111111111111111111111111111100  ok
+hex 28 promote 3 - decimal  ok
+. 140737488355324  ok
+hex 28 promote 3 - hex  ok
+. 7FFF FFFF FFFC  ok
+( used: 47 bits out of 48 bits )  ok
+hex 28 promote 2 - binary  ok
+. 11111111111111111111111111111111111111111111101  ok
+
+hex 28  promote   
+
+hex 38  promote   2 - hex
+
+hex 28 promote 2 - decimal  ok
+. 140737488355325  ok
+.s <0>  ok
+hex 28  promote   4 - binary ( bin dec hex reminder )  ok
+. 11111111111111111111111111111111111111111111011  ok
+hex 28  promote   4 - decimal  ok
+. 140737488355323  ok
+hex 28  promote   4 - hex  ok
+. 7FFFFFFFFFFB  ok
+.s <0>  ok
+hex 28  promote   3 - binary  ok
+. 11111111111111111111111111111111111111111111100  ok
+hex 28  promote   3 - decimal  ok
+. 140737488355324  ok
+hex 28  promote   3 - hex  ok
+. 7FFFFFFFFFFC  ok
+  ok
+hex 28  promote   2 - binary  ok
+. 11111111111111111111111111111111111111111111101  ok
+hex 28  promote   2 - decimal  ok
+. 140737488355325  ok
+hex 28  promote   2 - hex  ok
+. 7FFFFFFFFFFD  ok
+  ok
+hex 28  promote   1 - binary  ok
+. 11111111111111111111111111111111111111111111110  ok
+hex 28  promote   1 - decimal  ok
+. 140737488355326  ok
+hex 28  promote   1 - hex  ok
+. 7FFFFFFFFFFE  ok
+  ok
+( zero plus - same pattern as 1 minus or 1 plus )  ok
+  ok
+hex 28  promote   0 + binary  ok ( bin dec hex reminder )
+. 11111111111111111111111111111111111111111111111  ok
+hex 28  promote   0 + decimal  ok
+. 140737488355327  ok
+hex 28  promote   0 + hex  ok
+. 7FFF FFFF FFFF  ok ( 47 bits set: clearly the max without overflow )
+hex 28  promote   0 + binary  ok
+. 111 1111 1111 1111   1111 1111 1111 1111   1111 1111 1111 1111  ok
+  ok
+.s <0>  ok
+hex 28  promote   1 + binary ( adding one puts this virtual machine into overflow )  ok
+. 100000000000000000000000000000000000000000000000  ok
+( there it is - the 48th bit is set )  ok
+( signed 48 bit integers use the 48th bit for the sign )  ok
+bye 
+
+( END. )
